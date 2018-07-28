@@ -1,3 +1,9 @@
+/*
+Name: Niaj Rasul Prottoy
+ID: 1702075
+Level-1 Semester-I
+*/
+
 #include<stdio.h>
 #include<string.h>
 
