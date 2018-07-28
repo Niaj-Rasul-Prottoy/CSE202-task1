@@ -1,8 +1,40 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define mxn 1000000
+
+void show_list();
+void View(int *a);
+void Insert(int *a);
+void Search(int *a);
+void Delete(int *a);
+void Sort_asc(int *a);
+void Sort_des(int *a);
+void MemLoc(int *a);
+void perform(int *a);
+void clear_screen();
 
 int cmd=1, n = 0;
+
+int main()
+{
+    int *arr;
+    arr = new int [100000]; //dynamic memory allocation
+
+    while(true){
+        show_list();
+
+        cout<<"Please, enter a valid keyword from the given list: ";
+        cin>>cmd;
+
+        if(cmd == 0) break;
+
+        perform(arr);
+        clear_screen();
+    }
+
+    cout<<"\nThank you for using this system! :)"<<endl;
+
+    return 0;
+}
 
 void show_list(){
     cout<<"0....Exit"<<endl;
@@ -102,26 +134,3 @@ void clear_screen(){
     char chh = getchar();
     system("CLS");
 }
-
-int main()
-{
-    int *arr;
-    arr = new int [mxn]; //dynamic memory allocation of 10^6 elements
-
-    while(true){
-        show_list();
-
-        cout<<"Please, enter a valid keyword from the given list: ";
-        cin>>cmd;
-
-        if(cmd == 0) break;
-
-        perform(arr);
-        clear_screen();
-    }
-
-    cout<<"\nThank you for using this system! :)"<<endl;
-
-    return 0;
-}
-
