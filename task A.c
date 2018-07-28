@@ -1,9 +1,39 @@
 #include<stdio.h>
 #include<string.h>
 
-#define mxn 1000000
+void show_list();
+void View(int *a);
+void Insert(int *a);
+void Search(int *a);
+void Delete(int *a);
+void Sort_asc(int *a);
+void Sort_des(int *a);
+void MemLoc(int *a);
+void perform(int *a);
+void clear_screen();
 
 int i, j, cmd, n = 0;
+
+int main()
+{
+    int *arr = malloc(100000 * sizeof(int)); //dynamic memory allocation
+
+    while(1){
+        show_list();
+
+        printf("Please, enter a valid keyword from the given list: ");
+        scanf("%d", &cmd);
+
+        if(cmd == 0) break;
+
+        perform(arr);
+        clear_screen();
+    }
+
+    printf("\nThank you for using this system! :)\n");
+
+    return 0;
+}
 
 void show_list(){
     printf("0....Exit\n");
@@ -116,25 +146,3 @@ void clear_screen(){
     char chh = getchar();
     system("CLS");
 }
-
-int main()
-{
-    int *arr = malloc(mxn * sizeof(int)); //dynamic memory allocation of 10^6 elements
-
-    while(1){
-        show_list();
-
-        printf("Please, enter a valid keyword from the given list: ");
-        scanf("%d", &cmd);
-
-        if(cmd == 0) break;
-
-        perform(arr);
-        clear_screen();
-    }
-
-    printf("\nThank you for using this system! :)\n");
-
-    return 0;
-}
-
